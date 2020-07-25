@@ -1,0 +1,18 @@
+$base: teal;
+$base-inverse: white;
+$base-alt: #c7230a;
+$base-alt-inverse: white;
+
+$primary-bg: $base-inverse;
+$primary-link-color: $base;
+$primary-text-color: darken(gray, 10%);
+$secondary-bg: $base-alt-inverse;
+$secondary-link-color: $base-alt;
+$secondary-text-color: darken(gray, 10%);
+//Inverse
+$primary-bg-inverse: $base;
+$primary-link-color-inverse: $base-inverse;
+$primary-text-color-inverse: darken(white, 10%);
+$secondary-bg-inverse: $base-alt;
+$secondary-link-color-inverse: $base-alt-inverse;
+$secondary-text-color-inverse: darken(white, 10%);

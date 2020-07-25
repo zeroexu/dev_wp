@@ -1,0 +1,138 @@
+@import "./vars";
+@import "./animation-mixins";
+$primary-bg: $base-inverse;
+$primary-link-color: $base;
+$primary-text-color: darken(gray, 10%);
+$secondary-bg: $base-alt-inverse;
+$secondary-link-color: $base-alt;
+$secondary-text-color: darken(gray, 10%);
+//Inverse
+$primary-bg-inverse: $base;
+$primary-link-color-inverse: $base-inverse;
+$primary-text-color-inverse: darken(white, 10%);
+$secondary-bg-inverse: $base-alt;
+$secondary-link-color-inverse: $base-alt-inverse;
+$secondary-text-color-inverse: darken(white, 10%);
+
+@mixin horizontal-ul-menu {
+  display: flex;
+  padding-inline-start: 0px;
+  height: 50px;
+}
+
+@mixin horizontal-li-item-menu {
+  background-color: $primary-bg;
+  list-style: none;
+  display: inline;
+  align-items: center;
+  padding: 10px;
+}
+
+@mixin sub-menu {
+}
+
+@function sideSubmenu($index) {
+  @if ($index % 2 == 0) {
+    @return 160px;
+  } @else {
+    @return -180px;
+  }
+}
+main#primary {
+  clear: both;
+}
+header#masthead {
+  display: flex;
+  flex-direction: column-reverse;
+  nav#site-navigation {
+    align-self: flex-start;
+    ul,
+    ol {
+      list-style: none;
+    }
+    ul#primary-menu {
+      display: flex;
+      li {
+        background-color: #000;
+        padding: 2px;
+        a {
+          color: #fff;
+          text-decoration: none;
+          padding: 10px 12px;
+          display: block;
+          &:hover {
+            background-color: palevioletred;
+            transition: background-color 1s;
+            border-radius: 5px;
+          }
+        }
+        ul.sub-menu {
+          display: none;
+          position: absolute;
+          min-width: 140px;
+          @include anim-from-down;
+          li {
+            position: relative;
+            ul.sub-menu {
+              display: none;
+              right: -140px;
+              top: 0px;
+              li {
+                ul.sub-menu {
+                  right: 140px;
+                  display: none;
+                  li {
+                    ul.sub-menu {
+                      display: none;
+                      li {
+                        ul.sub-menu {
+                          display: none;
+                          li {
+                            ul.sub-menu {
+                              display: none;
+                              li {
+                                ul.sub-menu {
+                                  display: none;
+                                }
+                                &:hover ul.sub-menu {
+                                  display: block;
+                                }
+                              }
+                            }
+                            &:hover ul.sub-menu {
+                              display: block;
+                            }
+                          }
+                        }
+                        &:hover ul.sub-menu {
+                          display: block;
+                        }
+                      }
+                    }
+                    &:hover ul.sub-menu {
+                      display: block;
+                    }
+                  }
+                }
+                &:hover ul.sub-menu {
+                  display: block;
+                }
+              }
+            }
+            &:hover ul.sub-menu {
+              display: block;
+            }
+          }
+        }
+        &:hover ul.sub-menu {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  width: 500px; /*Le establecemos un ancho*/
+  margin: 0 auto; /*Centramos automaticamente*/
+}

@@ -1,0 +1,74 @@
+@import "./vars";
+@import "./animation-mixins";
+
+//--- Alternate background color
+.anim-alt-background {
+  @include anim-alt-background;
+}
+
+//-- Rotate
+.anim-infinite-rotate {
+  @include anim-infinite-rotate;
+}
+
+//fade-in
+.anim-fade-in {
+  @include anim-fade-in;
+}
+
+//fade-out
+.anim-fade-out {
+  @include anim-fade-out;
+}
+
+.anim-bounce-vertical {
+  @include anim-bounce-vertical;
+}
+
+.anim-bounce-horizontal {
+  @include anim-bounce-horizontal;
+}
+
+.anim-from-down {
+  @include anim-from-down;
+}
+
+.anim-from-left {
+  @include anim-from-left;
+}
+
+.anim-from-rigth {
+  @include anim-from-right;
+}
+
+.anim-floating {
+  @include anim-floating;
+}
+
+.gallery-element {
+  img {
+    transform: rotate(0);
+    transition: transform 0.2s;
+    &:hover {
+      transform: rotate(45deg);
+      transition: transform 0.2s;
+    }
+  }
+}
+
+/******** NB************/
+.naranjabit_fadein {
+  @include anim-fade-out;
+}
+
+.naranjabit_fadeout {
+  @include anim-fade-in;
+}
+
+.naranjabit_hide {
+  display: none;
+}
+
+.naranjabit_show {
+  display: block;
+}
