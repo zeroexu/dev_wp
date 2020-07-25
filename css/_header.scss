@@ -45,7 +45,7 @@ header#masthead {
   display: flex;
   flex-direction: column-reverse;
   nav#site-navigation {
-    align-self: flex-start;
+    align-self: flex-end;
     ul,
     ol {
       list-style: none;
@@ -71,18 +71,23 @@ header#masthead {
           position: absolute;
           min-width: 140px;
           @include anim-from-down;
+          padding-inline-start: 0px;
+          &:last-child {
+            margin-left: -70px;
+          }
           li {
             position: relative;
             ul.sub-menu {
               display: none;
-              right: -140px;
+              right: 140px;
               top: 0px;
               li {
                 ul.sub-menu {
-                  right: 140px;
+                  right: -140px;
                   display: none;
                   li {
                     ul.sub-menu {
+                      right: 140px;
                       display: none;
                       li {
                         ul.sub-menu {
