@@ -45,6 +45,18 @@ header#masthead {
   display: flex;
   flex-direction: column-reverse;
   nav#site-navigation {
+    background-color: black;
+    width: 100%;
+    button.menu-toggle {
+      display: block;
+      background-color: black;
+      color: gray;
+      border: none;
+      padding: 10px;
+      @media (min-width: 600px) {
+        display: none;
+      }
+    }
     align-self: flex-end;
     ul,
     ol {
@@ -52,8 +64,12 @@ header#masthead {
     }
     ul#primary-menu {
       display: flex;
+      justify-content: flex-end;
+      @media (max-width: 600px) {
+        display: none;
+      }
       li {
-        background-color: #000;
+        background-color: black;
         padding: 2px;
         a {
           color: #fff;

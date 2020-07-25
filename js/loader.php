@@ -5,10 +5,17 @@ function naranjabit_windowload() {
     var loader = document.getElementById("naranjabit_loaderpage");
     //loader.setAttribute("class", "naranjabit_hide");
     naranjabit_affect_template_with_class("naranjabit_show");
+    var btn = nb_getByID('primary-toogle-button')
+    
   }, 0000);
+  nb_
 }
 window.onload = naranjabit_windowload;
 /********************* */
+
+function naranjabit_primary_menu(){
+  
+}
 
 function naranjabit_affect_template_with_class(className) {
   var head = nb_getByID("masthead");
