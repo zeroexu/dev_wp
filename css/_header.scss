@@ -1,5 +1,5 @@
-@import "./vars";
-@import "./animation-mixins";
+@import './vars';
+@import './animation-mixins';
 $primary-bg: $base-inverse;
 $primary-link-color: $base;
 $primary-text-color: darken(gray, 10%);
@@ -42,11 +42,15 @@ main#primary {
   clear: both;
 }
 header#masthead {
+  position: absolute;
+  width: 100%;
+  z-index: 999;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   nav#site-navigation {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.1);
     width: 100%;
+    padding-right: 24px;
     button.menu-toggle {
       display: block;
       background-color: black;
@@ -64,22 +68,17 @@ header#masthead {
     }
     ul#primary-menu {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       @media (max-width: 600px) {
         display: none;
       }
       li {
-        background-color: black;
         padding: 2px;
         a {
-          color: #fff;
           text-decoration: none;
-          padding: 10px 12px;
           display: block;
           &:hover {
-            background-color: palevioletred;
-            transition: background-color 1s;
-            border-radius: 5px;
+            border-radius: 2px;
           }
         }
         ul.sub-menu {
@@ -93,6 +92,19 @@ header#masthead {
           }
           li {
             position: relative;
+            a {
+              color: $primary-link-color;
+              background-color: $primary-bg;
+              text-decoration: none;
+              padding: 10px 12px;
+              display: block;
+              &:hover {
+                color: $primary-link-color-inverse;
+                background-color: $primary-bg-inverse;
+                transition: background-color 1s;
+                border-radius: 2px;
+              }
+            }
             ul.sub-menu {
               display: none;
               right: 140px;
@@ -151,9 +163,4 @@ header#masthead {
       }
     }
   }
-}
-
-.nav {
-  width: 500px; /*Le establecemos un ancho*/
-  margin: 0 auto; /*Centramos automaticamente*/
 }

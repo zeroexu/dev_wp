@@ -8,7 +8,7 @@ function naranjabit_windowload() {
     var btn = nb_getByID('primary-toogle-button')
     
   }, 0000);
-  nb_
+ 
 }
 window.onload = naranjabit_windowload;
 /********************* */
