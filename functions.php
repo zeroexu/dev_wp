@@ -145,11 +145,11 @@ add_action( 'widgets_init', 'naranjabit_widgets_init' );
 function naranjabit_scripts() {
 
 	//wp_enqueue_style( 'naranjabit-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'naranjabit-style', 'rtl', 'replace' );
-	wp_enqueue_style( 'naranjabit-style-core', get_template_directory_uri() . '/css/style.css', false,  rand(111,9999), 'all' );
+	//wp_style_add_data( 'naranjabit-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'naranjabit-style-core', get_template_directory_uri() . '/css/style.min.css', false,  rand(111,9999), 'all' );
 	
 
-	wp_enqueue_script( 'naranjabit-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	//wp_enqueue_script( 'naranjabit-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'naranjabit-loader', get_template_directory_uri() . '/js/loader.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -187,20 +187,21 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 function naranjabit_defer_javascripts ($url) 
 {
-	if (strpos($url, 'jquery.js')) { 
+	if (strpos($url, 'jquery.js') !== false ) { 
 		return $url;
 	}
-	if (strpos($url, 'loader.js')) { 
+	if (strpos($url, 'loader.js') !== false  ) { 
 		return $url;
 	}
-	if (strpos($url, '.js') === true ) { 
+	if (strpos($url, '.js') !== false ) { 
 			return "$url' defer async data='";
 	}
-	if (strpos($url, '.css') === true ) { 
+	if (strpos($url, '.css') !== false  ) { 
 		return "$url' defer async data='";
 	}
     
   return $url;
 }
 add_filter('clean_url', 'naranjabit_defer_javascripts', 11, 1);
+
 

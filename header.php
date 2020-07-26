@@ -16,6 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="Description" content="Mi primer template de wordpress">
+	<!-- <meta http-equiv="Cache-Control" content="max-age=3600“> -->
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php require_once('js/loader.php') ?>
 	<?php wp_head(); ?>

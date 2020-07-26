@@ -1,5 +1,5 @@
-@import './vars';
-@import './animation-mixins';
+@import "./vars";
+@import "./animation-mixins";
 $primary-bg: $base-inverse;
 $primary-link-color: $base;
 $primary-text-color: darken(gray, 10%);
@@ -50,7 +50,6 @@ header#masthead {
   nav#site-navigation {
     background-color: rgba(0, 0, 0, 0.1);
     width: 100%;
-    padding-right: 24px;
     button.menu-toggle {
       display: block;
       background-color: black;
@@ -162,5 +161,13 @@ header#masthead {
         }
       }
     }
+  }
+}
+
+ul {
+  li {
+    margin-top: 15px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
   }
 }

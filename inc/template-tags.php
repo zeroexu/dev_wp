@@ -128,23 +128,37 @@ if ( ! function_exists( 'naranjabit_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php 
+				//the_post_thumbnail(); 
+				if (wp_is_mobile()) {
+					the_post_thumbnail('medium');
+					} else {
+					the_post_thumbnail('medium_large');
+					}
+				?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
+					if (wp_is_mobile()) {
+							the_post_thumbnail('medium',array(
+								'alt' => the_title_attribute(
+									array(
+										'echo' => false,
+									)
+								),
+							));
+						} else {
+							the_post_thumbnail('medium_large',array(
+								'alt' => the_title_attribute(
+									array(
+										'echo' => false,
+									)
+								),
+							));
+						}
 				?>
 			</a>
 
