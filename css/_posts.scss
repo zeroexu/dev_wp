@@ -1,10 +1,14 @@
-@import './vars';
+@import "./vars";
 
 main#primary {
   article {
     header {
       position: absolute;
       width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
       h1 {
         width: 100%;
         text-align: center;
