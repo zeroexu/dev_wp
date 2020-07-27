@@ -103,24 +103,23 @@ header#masthead {
       list-style: none;
     }
     ul#primary-menu {
+      margin: 0px;
       display: flex;
       justify-content: center;
       @media (max-width: 600px) {
         display: none;
       }
       li {
-        padding: 2px;
-        margin-right: 8px;
-        margin-left: 8px;
         a {
           text-decoration: none;
           display: block;
+          height: 26px;
           &:hover {
             border-radius: 2px;
           }
         }
         ul.sub-menu {
-          display: none;
+          //display: none;
           position: absolute;
           min-width: 140px;
           @include anim-from-down;
@@ -129,6 +128,7 @@ header#masthead {
             margin-left: -70px;
           }
           li {
+            padding: unset;
             position: relative;
             a {
               color: $primary-link-color;
@@ -136,6 +136,7 @@ header#masthead {
               text-decoration: none;
               padding: 10px 12px;
               display: block;
+              height: auto;
               &:hover {
                 color: $primary-link-color-inverse;
                 background-color: $primary-bg-inverse;
@@ -144,26 +145,26 @@ header#masthead {
               }
             }
             ul.sub-menu {
-              display: none;
+              //display: none;
               right: 140px;
               top: 0px;
               li {
                 ul.sub-menu {
                   right: -140px;
-                  display: none;
+                  //display: none;
                   li {
                     ul.sub-menu {
                       right: 140px;
-                      display: none;
+                      //display: none;
                       li {
                         ul.sub-menu {
-                          display: none;
+                          //display: none;
                           li {
                             ul.sub-menu {
-                              display: none;
+                              //display: none;
                               li {
                                 ul.sub-menu {
-                                  display: none;
+                                  //display: none;
                                 }
                                 &:hover ul.sub-menu {
                                   display: block;
@@ -201,6 +202,11 @@ header#masthead {
       }
     }
   }
+}
+
+ul#primary-menu li {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 section.widget {

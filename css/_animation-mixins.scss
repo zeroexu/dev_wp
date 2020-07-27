@@ -1,37 +1,5 @@
 @import "./vars";
 
-//--- Alternate background color
-@mixin anim-alt-background {
-  animation: change-color-frames 2s infinite;
-}
-
-@keyframes change-color-frames {
-  0% {
-    background-color: #001f3f;
-  }
-  50% {
-    background-color: #ff4136;
-  }
-  100% {
-    background-color: #001f3f;
-  }
-}
-
-//-- Rotate
-@mixin anim-infinite-rotate {
-  animation: full-rotation-frames 2s linear infinite;
-  border-radius: 150px;
-}
-
-@keyframes full-rotation-frames {
-  0% {
-    transform: rotate(1deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 //fade-in
 @mixin anim-fade-in {
   animation: fade-in-frames 3s;
@@ -61,46 +29,6 @@
   }
 }
 
-@mixin anim-bounce-vertical {
-  animation: bounce-vertical-frames 1s;
-}
-
-@keyframes bounce-vertical-frames {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-30px);
-  }
-  60% {
-    transform: translateY(-15px);
-  }
-}
-
-@mixin anim-bounce-horizontal {
-  animation: bounce-horizontal-frames 1s;
-}
-
-@keyframes bounce-horizontal-frames {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateX(0);
-  }
-  40% {
-    transform: translateX(-30px);
-  }
-  60% {
-    transform: translateX(-15px);
-  }
-}
-
 @mixin anim-from-down {
   animation: move-from-down-frames 0.3s linear;
 }
@@ -111,56 +39,5 @@
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-@mixin anim-from-right {
-  animation: move-from-right-frames 1s linear;
-}
-
-@keyframes move-from-right-frames {
-  0% {
-    transform: translateX(calc(-100vw / 3));
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@mixin anim-from-left {
-  animation: move-from-left-frames 1s linear;
-}
-
-@keyframes move-from-left-frames {
-  0% {
-    transform: translateX(calc(100vw / 3));
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@mixin anim-floating {
-  animation: floating-frames 1s linear infinite;
-}
-
-@keyframes floating-frames {
-  0% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(random(10) + px, random(10) + px);
-  }
-  40% {
-    transform: translate(random(10) + px, random(10) + px);
-  }
-  60% {
-    transform: translate(random(10) + px, random(10) + px);
-  }
-  80% {
-    transform: translate(random(10) + px, random(10) + px);
-  }
-  100% {
-    transform: translate(0, 0);
   }
 }
