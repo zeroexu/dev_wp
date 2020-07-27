@@ -59,7 +59,7 @@ header#masthead {
   display: flex;
   background-color: rgba(0, 0, 0, 0.1);
   @media (max-width: 600px) {
-    flex-direction: row-reverse;
+    flex-direction: column;
   }
   div.site-branding {
     display: flex;
@@ -85,6 +85,7 @@ header#masthead {
 
   nav#site-navigation {
     width: 100%;
+    align-self: center;
     button.menu-toggle {
       display: block;
       background-color: black;
@@ -97,116 +98,187 @@ header#masthead {
       margin-top: 16px;
       margin-bottom: 16px;
     }
-    align-self: flex-end;
     ul,
     ol {
       list-style: none;
     }
     ul#primary-menu {
-      margin: 0px;
-      display: flex;
-      justify-content: center;
       @media (max-width: 600px) {
-        display: none;
-      }
-      li {
-        a {
-          text-decoration: none;
-          display: block;
-          height: 26px;
+        //display: none;
+        display: flex;
+        flex-direction: column;
+        padding-inline-start: 0px;
+        li {
+          a {
+            display: block;
+            height: 26px;
+            text-transform: capitalize;
+            padding-top: 10px;
+            padding-right: 10px;
+            background-color: black;
+            padding-left: 20px;
+          }
+          ul.sub-menu {
+            display: none;
+          }
           &:hover {
-            border-radius: 2px;
-          }
-        }
-        ul.sub-menu {
-          //display: none;
-          position: absolute;
-          min-width: 140px;
-          @include anim-from-down;
-          padding-inline-start: 0px;
-          &:last-child {
-            margin-left: -70px;
-          }
-          li {
-            padding: unset;
-            position: relative;
-            a {
-              color: $primary-link-color;
-              background-color: $primary-bg;
-              text-decoration: none;
-              padding: 10px 12px;
-              display: block;
-              height: auto;
-              &:hover {
-                color: $primary-link-color-inverse;
-                background-color: $primary-bg-inverse;
-                transition: background-color 1s;
-                border-radius: 2px;
-              }
-            }
             ul.sub-menu {
-              //display: none;
-              right: 140px;
-              top: 0px;
+              position: absolute;
+              margin: 0px;
+              padding-inline-start: 0px;
+
+              width: 100%;
+              display: block;
               li {
-                ul.sub-menu {
-                  right: -140px;
-                  //display: none;
-                  li {
-                    ul.sub-menu {
-                      right: 140px;
-                      //display: none;
-                      li {
-                        ul.sub-menu {
-                          //display: none;
+                a {
+                  padding-left: 20pox;
+                }
+                ul {
+                  display: none;
+                }
+                &:hover {
+                  ul {
+                    display: block;
+                    li {
+                      ul {
+                        display: none;
+                      }
+                      &:hover {
+                        ul {
+                          display: block;
                           li {
-                            ul.sub-menu {
-                              //display: none;
-                              li {
-                                ul.sub-menu {
-                                  //display: none;
-                                }
-                                &:hover ul.sub-menu {
-                                  display: block;
-                                }
-                              }
+                            ul {
+                              display: none;
                             }
-                            &:hover ul.sub-menu {
-                              display: block;
+                            &:hover {
+                              ul {
+                                display: block;
+                              }
                             }
                           }
                         }
-                        &:hover ul.sub-menu {
-                          display: block;
-                        }
                       }
-                    }
-                    &:hover ul.sub-menu {
-                      display: block;
                     }
                   }
                 }
-                &:hover ul.sub-menu {
-                  display: block;
-                }
               }
-            }
-            &:hover ul.sub-menu {
-              display: block;
             }
           }
         }
-        &:hover ul.sub-menu {
-          display: block;
+      }
+      @media (min-width: 600px) {
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        margin-left: -250px;
+        li {
+          a {
+            text-decoration: none;
+            display: block;
+            height: 26px;
+            text-transform: capitalize;
+            &:hover {
+              border-radius: 2px;
+            }
+          }
+          ul.sub-menu {
+            display: none;
+            position: absolute;
+            min-width: 140px;
+            @include anim-from-down;
+            padding-inline-start: 0px;
+            &:last-child {
+              margin-left: -18px;
+            }
+            li {
+              padding: unset;
+              position: relative;
+              a {
+                color: $primary-link-color;
+                background-color: $primary-bg;
+                text-decoration: none;
+                padding: 10px 12px;
+                display: block;
+                height: auto;
+                &:hover {
+                  color: $primary-link-color-inverse;
+                  background-color: $primary-bg-inverse;
+                  transition: background-color 1s;
+                  border-radius: 2px;
+                }
+              }
+              ul.sub-menu {
+                display: none;
+                right: 140px;
+                top: 0px;
+                li {
+                  ul.sub-menu {
+                    right: -140px;
+                    display: none;
+                    li {
+                      ul.sub-menu {
+                        right: 140px;
+                        display: none;
+                        li {
+                          ul.sub-menu {
+                            display: none;
+                            li {
+                              ul.sub-menu {
+                                display: none;
+                                li {
+                                  ul.sub-menu {
+                                    display: none;
+                                  }
+                                  &:hover ul.sub-menu {
+                                    display: block;
+                                  }
+                                }
+                              }
+                              &:hover ul.sub-menu {
+                                display: block;
+                              }
+                            }
+                          }
+                          &:hover ul.sub-menu {
+                            display: block;
+                          }
+                        }
+                      }
+                      &:hover ul.sub-menu {
+                        display: block;
+                      }
+                    }
+                  }
+                  &:hover ul.sub-menu {
+                    display: block;
+                  }
+                }
+              }
+              &:hover ul.sub-menu {
+                display: block;
+              }
+            }
+          }
+          &:hover ul.sub-menu {
+            display: block;
+          }
         }
       }
     }
   }
 }
-
-ul#primary-menu li {
-  padding-left: 8px;
-  padding-right: 8px;
+@media (min-width: 600px) {
+  ul#primary-menu li {
+    padding-left: 8px;
+    padding-right: 8px;
+    &:last-child {
+      padding-right: 70px;
+    }
+    a {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
 }
 
 section.widget {
