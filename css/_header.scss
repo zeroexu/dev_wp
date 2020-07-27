@@ -44,6 +44,14 @@ main#primary {
 a.skip-link {
   display: none;
 }
+a {
+  color: $primary-link-color;
+  transition: color 1s ease;
+  &:hover {
+    color: $secondary-link-color;
+    transition: color 1s ease;
+  }
+}
 header#masthead {
   position: absolute;
   width: 100%;
@@ -102,6 +110,8 @@ header#masthead {
       }
       li {
         padding: 2px;
+        margin-right: 8px;
+        margin-left: 8px;
         a {
           text-decoration: none;
           display: block;

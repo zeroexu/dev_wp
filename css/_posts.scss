@@ -25,5 +25,13 @@ main#primary {
         object-fit: cover;
       }
     }
+
+    div.entry-content {
+      padding: 16px;
+      p {
+        color: $primary-text-color;
+        line-height: 1.5rem;
+      }
+    }
   }
 }
